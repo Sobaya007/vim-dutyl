@@ -184,7 +184,7 @@ function! dutyl#core#runToolInBackground(tool,args) abort
     if has('win32')
         silent execute '!start '.s:createRunToolCommandIgnoreVimproc(a:tool,a:args)
     else
-        silent execute '!nohup '.s:createRunToolCommand(a:tool,a:args).' > /dev/null 2>&1 &'
+        silent execute '!nohup '.s:createRunToolCommand(a:tool,a:args).' > /dev/null 2>&1'
     endif
 endfunction
 

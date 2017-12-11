@@ -63,8 +63,18 @@ endfunction
 function! dutyl#util#setQuickfixOrLocationList(newItems,targetList,jump) abort
     if 'c'==a:targetList || 'q'==a:targetList
         call setqflist(a:newItems)
+        if !empty(a:newItems)
+            copen
+        else
+            cclose
+        endif
     elseif 'l'==a:targetList
         call setloclist(0,a:newItems)
+        if !empty(a:newItems)
+            lopen
+        else
+            lclose
+        endif
     endif
     if a:jump && !empty(a:newItems)
         if 'c'==a:targetList || 'q'==a:targetList

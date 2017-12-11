@@ -1,4 +1,4 @@
-setlocal omnifunc=dutyl#dComplete
+"setlocal omnifunc=dutyl#dComplete
 
 if dutyl#register#toolExecutable('dfmt')
     if !get(g:, 'dutyl_dontHandleFormat')

@@ -183,7 +183,7 @@ endfunction
 function! dutyl#core#runToolInBackground(tool,args) abort
     if has('win32')
         silent execute '!start '.s:createRunToolCommandIgnoreVimproc(a:tool,a:args)
-    else if has('nvim')
+    elseif has('nvim')
         silent execute 'call vimproc#system('.s:createRunToolCommand(a:tool,a:args).')'
     else
         silent execute '!nohup '.s:createRunToolCommand(a:tool,a:args).' > /dev/null 2>&1 &'
